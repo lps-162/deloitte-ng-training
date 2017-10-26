@@ -1,0 +1,47 @@
+<p>
+  employees works!
+</p>
+
+{{ title }}
+
+<br>
+
+
+<br>
+
+Emp FirstName: <input type="text" [(ngModel)]="employee.firstName"/>
+<br>
+Emp LastName: <input type="text" [(ngModel)]="employee.lastName"/>
+<br>
+Emp City: <input type="text" [(ngModel)]="employee.city"/>
+
+
+<input type="submit" value="Submit Details" (click)="submitEmployee()"/>
+
+<br>
+<br>
+List of employees
+<br>
+
+<ul>
+  <li *ngFor="let emp of listOfEmployees">
+    {{emp.firstName}} {{ emp.lastName }} - {{ emp.city }}
+  </li>
+</ul>
+
+<table class="table table-bordered">
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>City</th>
+    </tr>
+    <tr *ngFor="let emp of listOfEmployees">
+      <td>{{ emp.firstName }}</td>
+      <td>{{ emp.lastName }}</td>
+      <td>{{ emp.city }}</td>
+    </tr>
+   </table>
+
+   <br>
+   <br>
+   <br>
