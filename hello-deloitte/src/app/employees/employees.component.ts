@@ -8,12 +8,7 @@ import { Employee } from '../shared/models/employee';
 })
 export class EmployeesComponent implements OnInit {
   title: string;
-  employee: Employee = 
-    {
-    firstName: 'test',
-    lastName: 'test',
-    city: 'test'
-  };
+  selectedEmployee: Employee;
 
   listOfEmployees: Employee[] = [];
 
@@ -32,6 +27,11 @@ export class EmployeesComponent implements OnInit {
   }
 
   submitEmployee() {
-    console.log(this.employee);
+    console.log(this.selectedEmployee);
+  }
+
+  showEmployee(localEmp) {
+    console.log(localEmp);
+    this.selectedEmployee = localEmp;
   }
 }

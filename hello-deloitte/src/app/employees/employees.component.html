@@ -1,4 +1,4 @@
-<p>
+<!-- <p>
   employees works!
 </p>
 
@@ -27,7 +27,7 @@ List of employees
   <li *ngFor="let emp of listOfEmployees">
     {{emp.firstName}} {{ emp.lastName }} - {{ emp.city }}
   </li>
-</ul>
+</ul> -->
 
 <table class="table table-bordered">
     <tr>
@@ -35,13 +35,24 @@ List of employees
       <th>LastName</th>
       <th>City</th>
     </tr>
-    <tr *ngFor="let emp of listOfEmployees">
+    <tr *ngFor="let emp of listOfEmployees" (click)="showEmployee(emp)">
       <td>{{ emp.firstName }}</td>
       <td>{{ emp.lastName }}</td>
       <td>{{ emp.city }}</td>
+      <td>
+        <input type="submit" class="btn btn-info" (click)="showEmployee(emp)" />
+      </td>
     </tr>
    </table>
 
-   <br>
-   <br>
-   <br>
+<br>
+<div *ngIf="selectedEmployee">
+  <h3>
+    Selected Employee Details
+  </h3>
+  First Name: {{ selectedEmployee.firstName }}
+  <br>
+  Last Name: {{ selectedEmployee.lastName }}
+  <br>
+  City : {{ selectedEmployee.city }}
+</div>
