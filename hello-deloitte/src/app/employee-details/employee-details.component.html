@@ -1,0 +1,24 @@
+
+
+<div *ngIf="employee">
+  <p>
+      employee-details works!
+    </p>
+
+  <h3>
+    Employee Details
+  </h3>
+  First Name: {{ employee.firstName | uppercase }}
+  <br>
+  Last Name: {{ employee.lastName | uppercase }}
+  <br>
+  City : {{ employee.city | uppercase }}
+
+    <br>
+  Address: {{ address }}
+
+  <br>
+  <br>
+  {{ employee | json }}
+</div>
+

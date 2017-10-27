@@ -40,19 +40,22 @@ List of employees
       <td>{{ emp.lastName }}</td>
       <td>{{ emp.city }}</td>
       <td>
-        <input type="submit" class="btn btn-info" (click)="showEmployee(emp)" />
+        <input type="submit" class="btn btn-info" (click)="showEmployee(emp)" value="Show"/>
       </td>
     </tr>
    </table>
 
 <br>
-<div *ngIf="selectedEmployee">
-  <h3>
-    Selected Employee Details
-  </h3>
-  First Name: {{ selectedEmployee.firstName }}
-  <br>
-  Last Name: {{ selectedEmployee.lastName }}
-  <br>
-  City : {{ selectedEmployee.city }}
-</div>
+
+<app-employee-create (employeeCreated)="handleEmployeeCreation($event)" ></app-employee-create>
+<app-employee-details [emp]="selectedEmployee" [addr]="myAddressObj"></app-employee-details>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
