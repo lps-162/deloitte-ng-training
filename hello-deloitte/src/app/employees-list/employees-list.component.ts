@@ -31,9 +31,11 @@ export class EmployeesListComponent implements OnInit {
     this.myAddressObj = 'Hyderabad';
   }
 
-  handleEmployeeCreation(newEmployee) {
+  handleEmployeeCreation(newEmployee: Employee) {
     console.log('Coming from child component');
     console.log(newEmployee);
     this.listOfEmployees.push(newEmployee);
+    this.selectedEmployee = newEmployee;
   }
+
 }

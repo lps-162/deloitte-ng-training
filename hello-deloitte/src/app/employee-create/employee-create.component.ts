@@ -9,7 +9,7 @@ import { Employee } from '../shared/models/employee';
 })
 export class EmployeeCreateComponent implements OnInit {
   newEmployee: Employee = new Employee('', '', '');
-  @Output() employeeCreated = new EventEmitter();
+  @Output() employeeCreated = new EventEmitter<Employee>();
   
   constructor() { }
 
@@ -20,5 +20,6 @@ export class EmployeeCreateComponent implements OnInit {
     // console.log('Submitted');
     // console.log(this.newEmployee);
     this.employeeCreated.emit(this.newEmployee);
+    this.newEmployee = new Employee('', '', '');    
   }
 }
