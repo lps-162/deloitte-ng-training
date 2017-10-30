@@ -1,0 +1,20 @@
+<h3>
+  List of Employees
+</h3>
+
+<table class="table table-bordered">
+  <tr>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>City</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let emp of listOfEmployees" (click)="showEmployee(emp)">
+    <td>{{ emp.firstName }}</td>
+    <td>{{ emp.lastName }}</td>
+    <td>{{ emp.city }}</td>
+    <td>
+      <input type="submit" class="btn btn-info" (click)="showEmployee(emp)" value="Show"/>
+    </td>
+  </tr>
+ </table>
