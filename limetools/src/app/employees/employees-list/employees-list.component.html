@@ -9,12 +9,12 @@
     <th>City</th>
     <th>Actions</th>
   </tr>
-  <tr *ngFor="let emp of listOfEmployees" (click)="showEmployee(emp)">
+  <tr *ngFor="let emp of listOfEmployees">
     <td>{{ emp.firstName }}</td>
     <td>{{ emp.lastName }}</td>
     <td>{{ emp.city }}</td>
     <td>
-      <input type="submit" class="btn btn-info" (click)="showEmployee(emp)" value="Show"/>
+      <input type="submit" class="btn btn-info" routerLink="/employees/{{emp.id}}" value="Show" />
     </td>
   </tr>
  </table>

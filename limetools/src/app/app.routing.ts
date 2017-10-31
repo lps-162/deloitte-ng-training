@@ -3,6 +3,7 @@ import { EmployeesListComponent } from "./employees/employees-list/employees-lis
 import { AboutComponent } from "./about/about.component";
 
 import { RouterModule } from '@angular/router';
+import { EmployeeDetailsComponent } from "./employees/employee-details/employee-details.component";
 
 const routes = [
     {
@@ -12,6 +13,10 @@ const routes = [
     {
         path: 'employees',
         component: EmployeesListComponent
+    },
+    {
+        path: 'employees/:id',
+        component: EmployeeDetailsComponent
     },
     {
         path: 'about',
