@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../../shared/models/employee';
 
 @Component({
   selector: 'app-employee-create',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-create.component.css']
 })
 export class EmployeeCreateComponent implements OnInit {
-
+  newEmployee: Employee = new Employee(0, '', '', '');
+  
   constructor() { }
 
   ngOnInit() {
   }
 
+  createEmployee() {
+
+  }
 }

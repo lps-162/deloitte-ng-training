@@ -2,6 +2,13 @@
   List of Employees
 </h3>
 
+<a [routerLink]="['/employees/create']" class="btn btn-success">
+  Create New Employee
+</a>
+
+<br>
+<br>
+
 <table class="table table-bordered">
   <tr>
     <th>FirstName</th>
@@ -14,7 +21,8 @@
     <td>{{ emp.lastName }}</td>
     <td>{{ emp.city }}</td>
     <td>
-      <input type="submit" class="btn btn-info" routerLink="/employees/{{emp.id}}" value="Show" />
+      <input type="submit" class="btn btn-info" [routerLink]="['/employees', emp.id]" value="Show" />
+      <input type="submit" class="btn btn-info" [routerLink]="['/employees', emp.id]" value="Edit" />
     </td>
   </tr>
  </table>

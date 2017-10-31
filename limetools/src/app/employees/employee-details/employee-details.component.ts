@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { mockList } from '../../shared/mock-data/mock-employees';
 import { Employee } from '../../shared/models/employee';
 
@@ -11,7 +11,8 @@ import { Employee } from '../../shared/models/employee';
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee;
   
-  constructor(private route: ActivatedRoute, someotherVariable: number) { 
+  constructor(private route: ActivatedRoute,
+              private router: Router) { 
   }
 
   ngOnInit() {
@@ -19,5 +20,8 @@ export class EmployeeDetailsComponent implements OnInit {
     this.employee = mockList.find(e => e.id === employeeId);
   }
 
-
+  goBackToEmployees() {
+    const routeExpression = ['/employees'];
+    this.router.navigate(routeExpression);
+  }
 }
