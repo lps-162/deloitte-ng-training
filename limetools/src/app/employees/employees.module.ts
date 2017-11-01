@@ -7,6 +7,7 @@ import { EmployeeCreateComponent } from './employee-create/employee-create.compo
 import { EmployeesSectionComponent } from './employees-section/employees-section.component';
 import { FormsModule } from '@angular/forms';
 import { employeesRouting } from './employees.routing';
+import { EmployeesService } from '../shared/services/employees.service';
 
 
 @NgModule({
@@ -20,6 +21,9 @@ import { employeesRouting } from './employees.routing';
     EmployeeDetailsComponent,
     EmployeeCreateComponent,
     EmployeesSectionComponent
+  ],
+  providers: [
+    EmployeesService
   ]
 })
 export class EmployeesModule { }

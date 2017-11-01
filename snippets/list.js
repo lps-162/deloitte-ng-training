@@ -25,6 +25,9 @@ const employees = [
     }
 ];
 
-const favEmployee = employees.find(e => e.id === 2);
+const favEmployee = employees.find(e => {
+    const result = e.id ===2;
+    return result;
+});
 
 console.log(favEmployee);
