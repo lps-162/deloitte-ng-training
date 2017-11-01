@@ -24,6 +24,10 @@ const routes: Routes = [
     //     component: EmployeeDetailsComponent
     // },
     {
+        path: 'employees',
+        loadChildren: 'app/employees/employees.module#EmployeesModule'
+    },
+    {
         path: 'about',
         component: AboutComponent
     },

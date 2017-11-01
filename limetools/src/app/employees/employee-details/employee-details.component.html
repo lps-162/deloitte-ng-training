@@ -1,18 +1,19 @@
-
-<a routerLink="/employees" class="btn btn-info">Go Back</a>
-
-<input type="submit" (click)="goBackToEmployees()" 
-      value="Navigate Back" 
-      class="btn btn-danger" />
-<h3>
-  Employee Details
-</h3>
-
-
-Employee Id: {{ employee.id }}
-<br>
-First Name: {{ employee.firstName }}
-<br>
-Last Name: {{ employee.lastName }}
-<br>
-City: {{ employee.city }}
+<div *ngIf="employee">
+    <a routerLink="/employees" class="btn btn-info">Go Back</a>
+    
+    <input type="submit" (click)="goBackToEmployees()" 
+          value="Navigate Back" 
+          class="btn btn-danger" />
+    <h3>
+      Employee Details
+    </h3>
+    
+    
+    Employee Id: {{ employee.id }}
+    <br>
+    First Name: {{ employee.firstName }}
+    <br>
+    Last Name: {{ employee.lastName }}
+    <br>
+    City: {{ employee.city }}
+</div>

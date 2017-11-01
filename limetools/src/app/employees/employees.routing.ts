@@ -8,7 +8,7 @@ import { ModuleWithProviders } from "@angular/core";
 
 const routes: Routes = [
     {
-        path: 'employees',
+        path: '',
         component: EmployeesSectionComponent,
         children: [
             {
@@ -27,4 +27,4 @@ const routes: Routes = [
     }
 ];
 
-export const employeesRouting: ModuleWithProviders = RouterModule.forRoot(routes);
+export const employeesRouting: ModuleWithProviders = RouterModule.forChild(routes);

@@ -16,8 +16,13 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    const employeeId = parseInt(this.route.snapshot.params['id']);
-    this.employee = mockList.find(e => e.id === employeeId);
+    console.log('Getting hit');
+    //const employeeId = parseInt(this.route.snapshot.params['id']);
+    
+    this.route.paramMap.subscribe(params => {
+      this.employee = mockList.find(e => e.id.toString() === params.get('id'));
+      console.log(this.employee);
+    }); 
   }
 
   goBackToEmployees() {
