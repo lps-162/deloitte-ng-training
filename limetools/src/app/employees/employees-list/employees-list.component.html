@@ -9,14 +9,22 @@
 <br>
 <br>
 
+<div class="alert alert-danger" *ngIf="errorMessage">
+  Error messages go here : {{ errorMessage }}
+</div>
+
 <table class="table table-bordered">
   <tr>
+    <th>Id</th>
+    <th>EmpNo</th>
     <th>FirstName</th>
     <th>LastName</th>
     <th>City</th>
     <th>Actions</th>
   </tr>
   <tr *ngFor="let emp of listOfEmployees">
+    <td>{{ emp.id }}</td>
+    <td>{{ emp.empNo }}</td>
     <td>{{ emp.firstName }}</td>
     <td>{{ emp.lastName }}</td>
     <td>{{ emp.city }}</td>

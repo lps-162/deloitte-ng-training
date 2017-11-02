@@ -2,7 +2,20 @@
 <h3>
   Create Employee
 </h3>
-<form (submit)="createEmployee()">
+<form (submit)="createEmployee()" #employeeForm="ngForm">
+  {{ employeeForm.valid }}
+
+    <div class="form-group">
+        <label for="city">Emp No</label>
+        <input type="text" class="form-control" 
+        name="empNo" placeholder="Emp No"
+        [(ngModel)]="newEmployee.empNo" required
+        #empNo="ngModel" >
+      </div>
+      <p *ngIf="empNo.touched && empNo.invalid" >
+        EmpNo is Required
+      </p>
+
   <div class="form-group">
       <label for="firstName">First Name</label>
       <input type="text" class="form-control" 

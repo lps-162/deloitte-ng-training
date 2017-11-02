@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { mockList } from '../../shared/mock-data/mock-employees';
 import { Employee } from '../../shared/models/employee';
+import { EmployeesService } from '../../shared/services/employees.service';
+
 
 @Component({
   selector: 'app-employee-details',
@@ -10,9 +11,11 @@ import { Employee } from '../../shared/models/employee';
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee;
-  
+  errorMessage: string;
+
   constructor(private route: ActivatedRoute,
-              private router: Router) { 
+              private router: Router,
+              private service: EmployeesService) { 
   }
 
   ngOnInit() {
@@ -20,8 +23,11 @@ export class EmployeeDetailsComponent implements OnInit {
     //const employeeId = parseInt(this.route.snapshot.params['id']);
     
     this.route.paramMap.subscribe(params => {
-      this.employee = mockList.find(e => e.id.toString() === params.get('id'));
-      console.log(this.employee);
+      const empId: number = parseInt(params.get('id'));
+      this.service.getEmployeeById(empId)
+              .subscribe(employee => this.employee = employee,
+                         err => this.errorMessage = err);
+                
     }); 
   }
 
