@@ -19,6 +19,7 @@
     <th>EmpNo</th>
     <th>FirstName</th>
     <th>LastName</th>
+    <th>Fullname</th>
     <th>City</th>
     <th>Actions</th>
   </tr>
@@ -27,6 +28,7 @@
     <td>{{ emp.empNo }}</td>
     <td>{{ emp.firstName }}</td>
     <td>{{ emp.lastName }}</td>
+    <td>{{ emp.fullName }}</td>
     <td>{{ emp.city }}</td>
     <td>
       <input type="submit" class="btn btn-info" [routerLink]="['/employees', emp.id]" value="Show" />

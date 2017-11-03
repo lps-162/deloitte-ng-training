@@ -5,7 +5,7 @@ import { EmployeesListComponent } from './employees-list/employees-list.componen
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
 import { EmployeesSectionComponent } from './employees-section/employees-section.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { employeesRouting } from './employees.routing';
 import { EmployeesService } from '../shared/services/employees.service';
 
@@ -14,6 +14,7 @@ import { EmployeesService } from '../shared/services/employees.service';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     employeesRouting
   ],
   declarations: [

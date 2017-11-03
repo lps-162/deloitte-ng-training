@@ -14,9 +14,17 @@ export class EmployeesService {
   constructor(private http: Http) { }
 
   getEmployees() {
-    return this.http.get(this.baseUrl)
+    const empListObservable$ = this.http.get(this.baseUrl)
                     .map(res => res.json())
+                    .map(employees => employees.map(this.addFullName))
                     .catch(this.handleError);
+
+    return empListObservable$ as Observable<Employee[]>;
+  }
+
+  private addFullName(emp: Employee) {
+    emp.fullName = emp.firstName + ' ' + emp.lastName;
+    return emp;
   }
 
   getEmployeeById(id: number) {
@@ -24,6 +32,7 @@ export class EmployeesService {
 
     const empObservable$ = this.http.get(fetchUrl)
                               .map(res => res.json())
+                              .map(this.addFullName)
                               .catch(this.handleError);
 
     return empObservable$ as Observable<Employee>;

@@ -21,7 +21,7 @@ export class EmployeeDetailsComponent implements OnInit {
   ngOnInit() {
     console.log('Getting hit');
     //const employeeId = parseInt(this.route.snapshot.params['id']);
-    
+
     this.route.paramMap.subscribe(params => {
       const empId: number = parseInt(params.get('id'));
       this.service.getEmployeeById(empId)
